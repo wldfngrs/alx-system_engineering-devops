@@ -1,2 +1,2 @@
 #!/bin/bash
-(ls -Ad .* * | grep -v '^\.$' | grep -v '^\.\.$' | sort -V; echo .; echo ..) | awk '{ if (NR!=1) printf ", "; if ( -d $0 ) printf "%s/",$0; else printf "%s",$0 } END { print "" }'
+ls -a | LC_ALL=C sort -V | awk '{print $1"/"}'
