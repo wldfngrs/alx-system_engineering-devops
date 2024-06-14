@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a | LC_ALL=C sort -V | awk '{print $1"/"}'
+ls -Ap | LC_ALL=C sort -V | awk 'BEGIN {printf "./, ../, "} {printf "%s, ", $0}' | sed 's/, $/\n/'
